@@ -2,12 +2,12 @@
 
 namespace JasonStorey
 {
-    public class TransformLookRay : ACameraRayProvider
+    public class TransformLookRay : RayProvider
     {
         private readonly Transform _transform;
 
-        public TransformLookRay(Camera cam,Transform transform) : base(cam) => _transform = transform;
+        public TransformLookRay(Transform transform) => _transform = transform;
 
-        public override Ray New => new Ray(_transform.position,_transform.forward);
+        public Ray New => new Ray(_transform.position,_transform.forward);
     }
 }
